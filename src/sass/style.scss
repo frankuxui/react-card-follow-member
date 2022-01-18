@@ -1,0 +1,177 @@
+
+
+//
+// Styles
+
+@import "./config.scss";
+
+// Card variables
+
+$card-spacer:               1.5rem;
+$card-spacer-y:             $card-spacer;
+$card-spacer-x:             $card-spacer;
+$card-border-width:         1px;
+$card-border-radius:        1rem;
+$card-border-color:         hsla(0, 0%, 0%, 0.125);
+$card-cap-bg:               rgba(#000, .03);
+$card-cap-color:            null;
+$card-height:               null;
+$card-color:                null;
+$card-bg:                   white;
+
+$card-img-overlay-padding:  1.25rem;
+
+$card-group-margin:         30px / 2;
+$card-deck-margin:          $card-group-margin;
+
+$card-columns-gap:          1.25rem;
+$card-columns-margin:       $card-spacer-y;
+
+
+//
+// Card config
+
+$new-styles:    true;
+
+@if($new-styles) {
+  .card{
+    border: 0;
+    border-radius: $card-border-radius;
+    margin-bottom: 1rem;
+    .card-img{
+      border-radius: $card-border-radius;
+    }
+  }
+  .card .card-header{
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+  }
+  .card-header, .card-footer{
+    background-color: transparent;
+    border: 0;
+  }
+  .card-header, .card-body, .card-footer{
+    padding: $card-spacer;
+  }
+}
+
+
+//
+// Focus
+
+.card-content.card-focus:focus, 
+.card-content.card-focus:active {
+  border-radius: $card-border-radius;
+  transition: all .1s ease-in-out;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(146 156 169);
+}
+
+//
+// Media
+
+.card-media{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+//
+// Media link
+
+.card-media-link{
+  color: #000;
+  text-decoration: none;
+}
+
+
+//
+// Subtitle
+
+.--card-subtitle{
+  font-size: .875rem;
+}
+
+
+//
+// Avatar
+
+.card-avatar-container{
+  margin-bottom: 1rem;
+}
+.card-avatar {
+  border-radius: 50%;
+}
+
+
+//
+// Card footer
+
+.card-footer-action{
+  text-align: center;
+  border-bottom-left-radius: $card-border-radius;
+  border-bottom-right-radius: $card-border-radius; 
+  a{
+    font-size: .95rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    padding: $card-spacer 0;
+    transition: all .3s ease-in-out;
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius; 
+    &:active, &:focus{
+      background-color: hsl(202, 25%, 94%);
+    }
+  }
+}
+
+
+//
+// Animation
+
+.js-animation .js-delay {
+  transform: scale(0);
+}
+.js-animation .js-delay.animated {
+  transform: scale(1);
+  filter: FlipH;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+// for no-js (if you use modernizr, if don't - you can write own class for this sort of situations)
+.no-js .js-animation .js-delay.animated {
+  transform: scale(1);
+}
+
+//
+// Loader container
+
+.loader-container{
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+//
+// fetch error
+
+.fetch-error-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 10rem;
+  .fetch-error-icon{
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  p{
+    color: rgb(53, 57, 63);
+  }
+}

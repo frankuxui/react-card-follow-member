@@ -1,0 +1,51 @@
+
+
+//
+// Config
+
+:root{
+  --body-bg:                      hsl(210, 11%, 79%);
+  --body-color:                   hsl(210, 11%, 15%);
+  --body-color-hover:             hsl(0, 0%, 0%);
+  --footer-social-link-hover-bg:  hsl(207, 22%, 90%);
+}
+
+
+//
+// Roboto
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+//
+// Body
+
+body{
+  margin: 0;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: var(--body-color);
+  background-color: var(--body-bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+$enable-body-flex: true;
+
+.App{
+  padding-top: 3rem;
+  position: relative;
+  @if( $enable-body-flex ){
+    display: flex !important;
+    justify-content: space-between;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+  
+    
+  }
+}
+
+.header-example{
+  text-align: center;
+  color: var(--body-color);
+}
